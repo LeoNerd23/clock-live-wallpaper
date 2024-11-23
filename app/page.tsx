@@ -1,3 +1,6 @@
+"use client"
+
+import { useState, useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
 
 export default function Clock() {
@@ -34,14 +37,30 @@ export default function Clock() {
     const minute = getPart("minute");
     const weekday = getPart("weekday");
 
-    setInterval(separateDateETimeBrazil, 1000)
-
     return { day, month, year, hour, minute, weekday };
   }
 
-  const { day, month, year, hour, minute, weekday } = separateDateETimeBrazil();
+  const [dateTime, setDateTime] = useState(() => separateDateETimeBrazil());
 
-  const weekDays = ["domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado"];
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDateTime(separateDateETimeBrazil());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const { day, month, year, hour, minute, weekday } = dateTime;
+
+  const weekDays = [
+    "domingo",
+    "segunda-feira",
+    "terça-feira",
+    "quarta-feira",
+    "quinta-feira",
+    "sexta-feira",
+    "sábado",
+  ];
 
   return (
     <div className="h-screen flex justify-center items-center gap-8">
