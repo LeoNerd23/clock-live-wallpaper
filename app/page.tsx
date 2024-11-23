@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useState, useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
@@ -45,7 +45,7 @@ export default function Clock() {
   useEffect(() => {
     const interval = setInterval(() => {
       setDateTime(separateDateETimeBrazil());
-    }, 1000);
+    }, 1000)
 
     return () => clearInterval(interval);
   }, []);
@@ -63,7 +63,7 @@ export default function Clock() {
   ];
 
   return (
-    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full bg-transparent flex justify-center items-center gap-8">
+    <div className="h-screen flex justify-center items-center gap-8">
       <div className="gap-8 flex flex-col pb-16">
         <div className="flex flex-col gap-3">
           {weekDays.map((dayName, index) => (
@@ -89,7 +89,7 @@ export default function Clock() {
         </div>
       </div>
 
-      <div className="text-[600px] flex items-center">
+      <div className="text-[550px] flex items-center">
         <span>{hour}</span>
         <span className="animate-blink text-white">:</span>
         <span>{minute}</span>
