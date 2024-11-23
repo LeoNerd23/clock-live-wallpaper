@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import "./fonts.css";
 import { ThemeProvider } from "@/components/theme-provider";
 export const metadata: Metadata = {
-  title: "Gym Manneger",
-  description: "Gym Manneger",
+  title: "Clock",
+  description: "Clock Live Wallpaper",
 };
 
 export default function RootLayout({
@@ -14,8 +14,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body>
-        <ThemeProvider attribute="class" defaultTheme="system">
+      <body className="h-screen w-screen overflow-hidden p-0 m-0">
+        <ThemeProvider attribute="class" defaultTheme="dark">
           {children}
         </ThemeProvider>
       </body>

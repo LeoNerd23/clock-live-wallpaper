@@ -1,5 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Poppins:wght@400;700&display=swap');
+@font-face {
+  font-family: "FX-led";
+  src: url(/fonts/FX-Led.ttf) format("truetype"),
+      url(/fonts/FX-Led.woff2) format("woff2"),
+       url(/fonts/FX-Led.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
 html {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'FX-led', sans-serif !important;
 }
