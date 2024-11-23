@@ -63,7 +63,7 @@ export default function Clock() {
   ];
 
   return (
-    <div className="h-screen flex justify-center items-center gap-8">
+    <div className="h-screen w-sreen flex justify-center items-center gap-8">
       <div className="gap-8 flex flex-col pb-16">
         <div className="flex flex-col gap-3">
           {weekDays.map((dayName, index) => (
